@@ -1,0 +1,29 @@
+﻿<Window x:Class="ScheduleGUI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ScheduleGUI"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800"
+        DataContext="{Binding RelativeSource={RelativeSource Self}}">
+    <StackPanel Orientation="Horizontal" Margin="0,0,251.6,0">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <TextBox Grid.Row="0" Name="TextBoxSubjectName" Height="30" Width="140"></TextBox>
+            <TextBox Grid.Row="1" Name="TextBoxNumberHours" Height="30" Width="140"></TextBox>
+            <Button Grid.Row="2" Height="30" Width="140" FontSize="18" Click="Button_Click">Insert</Button>
+        </Grid>
+        <GridSplitter></GridSplitter>
+        <DataGrid Name="SubjectsDataGrid" ItemsSource="{Binding Schedule}" Margin="20" Width="400" SelectionChanged="SubjectsDataGrid_SelectionChanged">
+
+        </DataGrid>
+    </StackPanel>
+</Window>
